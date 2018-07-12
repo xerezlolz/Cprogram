@@ -10,7 +10,6 @@ typedef struct {
      * 
     */
     float Ek, Ek1,Ek2;
-    float Addsum;    
 }AddTypeDef;
 
 /**
