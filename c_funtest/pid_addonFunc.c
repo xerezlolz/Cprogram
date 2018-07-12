@@ -27,7 +27,7 @@ float Add_cout(float SetValue, float ActualValue, AddTypeDef *PID) {
     PID->Ek = SetValue - ActualValue; //误差计算
     Addint = PID->Kp * (PID->Ek1 - PID->Ek)+PID->Ki * PID->Ek + PID->Kd * (PID->Ek - 2 * PID->Ek1 + PID->Ek2);
     /**
-     * 误差更新
+     * update Ek\Ek1\Ek2
     */
     PID->Ek1 = PID->Ek2;
     PID->Ek1 = PID->Ek;
