@@ -6,8 +6,8 @@
 //创建节点
 typedef struct DulCom
 {
-    char name; //姓名
-    char sex;  //性别
+    char name[12]; //姓名
+    char sex[8];  //性别
     int phone_number;  //电话
     char note;  //备注
     struct DulCom *next;
@@ -29,7 +29,7 @@ void window(){
 //创建空表
 DulList creat_comm(){
     DulList p;
-    if(NULL== (p = (DulList)malloc(sizeof(DulCommu)))){
+    if(NULL== (p = (DulList)malloc(sizeof(struct DulCom)))){
         printf("creat new infomation form error\n");
         exit(0);
     }
@@ -41,33 +41,51 @@ DulList creat_comm(){
 DulList init_comm(DulList l,int n){
     char nm, sx;
     int i, num;
-    DulList p;
+    DulList a;
     for (i=0; i< INIT; i++){
-        p = (DulList)malloc(sizeof(DulCommu));
-        printf("输入第%d个初始联系人:", i+1);
-        printf("==============================");
-        printf("第%d个联系人-姓名:", i + 1);
+        a = (DulList)malloc(sizeof(struct DulCom));
+        printf("输入第%d个初始联系人\n:", i+1);
+        printf("==============================\n");
+        printf("第%d个联系人-姓名:\n", i + 1);
         scanf("%s", nm);
-        p->name = nm;
+        a->name = nm;
         printf("==============================");
-        printf("第%d个联系人-电话:", i + 1);
-        scanf("%d", num);
-        p->phone_number = num;
+        printf("第%d个联系人-电话:\n", i + 1);
+        scanf("%d", &num);
+        a->phone_number = num;
         printf("==============================");
-        printf("第%d个联系人-性别:", i + 1);
+        printf("第%d个联系人-性别\n:", i + 1);
         scanf("%s", sx);
-        p->sex = sx;
+        a->sex = sx;
 
-        p->next = l->next;
-        p = l;
-    }    
+        a->next = l->next;
+
+    }
+    return l;
 }
-void print_comm(){}
+void print_comm(DulList p){
+    int i = 1;
+    DulList s;
+    s = p->next;
+    while (s)
+    {
+        printf("==============================\n");
+        printf("输入第%d个初始联系人:", i);
+        printf("姓名:%s\n", s->name);
+        printf("性别:%s\n", s->sex);
+        printf("电话:%d\n", s->phone_number);
+        s = s->next;
+        i++;
+    }
+    
+}
 
 
 int main(int argc, const char *argv[]) {
-    DulList source1, sec1;
+    DulList source1;
     source1 = creat_comm();
     source1 = init_comm(source1, INIT);
+    print_comm(source1);
+    getchar();
     return 0;
 }
