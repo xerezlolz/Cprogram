@@ -13,7 +13,7 @@ typedef struct DulCom
     struct DulCom *next;
 }DulCommu, *DulList;
 
-//创建界面
+//创建交互界面
 void window(){
     printf("\\*************************************************\\\n");
     printf("1.显示全部联系人信息\n");
@@ -93,6 +93,20 @@ void print_comm(DulList p){
     getchar();
 }
 
+//清空通讯录
+DulList clear_comm(DulList l){
+    DulList cast,p;
+    p = l->next;
+    while (p)
+    {
+        cast = p->next;
+        free(p);
+        p = cast;
+    }
+    l->next = NULL;
+    return l;
+}
+
 
 int main(int argc, const char *argv[]) {
     DulList source1;
@@ -100,5 +114,16 @@ int main(int argc, const char *argv[]) {
     source1 = init_comm(source1, INIT);
     print_comm(source1);
     getchar();
+
+    /**
+     * 交互逻辑: 输入
+     * 1.显示全部联系人信息;
+     * 2.清空联系人信息;
+     * 3.插入新联系人;
+     * 4.查找联系人(按 姓名/电话);
+     * 5.删除联系人信息(按 姓名/电话);
+     * 6.筛选联系人-性别;
+     * 7.按0退出;
+    */
     return 0;
 }
