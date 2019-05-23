@@ -8,7 +8,7 @@ typedef struct DulCom
 {
     char name[10]; //姓名
     char sex[4];  //性别
-    int phone_number;  //电话
+    char phone_number[12];  //电话
     char note;  //备注
     struct DulCom *next;
 }DulCommu, *DulList;
@@ -49,20 +49,12 @@ DulList init_comm(DulList l,int n){
         printf("==============================\n");
         printf("第%d个联系人-姓名:\n", i+1);
         scanf("%s", a->name);
-        //scanf("%c", nm);
-        //getchar();
-        //nm = getchar();
-        //a->name = nm[10];
         printf("==============================\n");
         printf("第%d个联系人-电话:\n", i+1);
-        scanf("%d", &num);
-        getchar();
-        a->phone_number = num;
+        scanf("%s", a->phone_number);
         printf("==============================\n");
         printf("第%d个联系人-性别:\n", i+1);
         scanf("%s",a->sex);
-        //getchar();
-        //a->sex[4] = sx[4];
         printf("\n");
 
         a->next = l->next;
@@ -85,7 +77,7 @@ void print_comm(DulList p){
 
         printf("姓名:%s\n", s->name);
         printf("性别:%s\n", s->sex);
-        printf("电话:%d\n", s->phone_number);
+        printf("电话:%s\n", s->phone_number);
         printf("==============================\n");
         s = s->next;
         i++;
