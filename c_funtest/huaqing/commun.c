@@ -1,13 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
-#define INIT 3
+#define INIT 1
 
 //创建节点
 typedef struct DulCom
 {
-    char name[12]; //姓名
-    char sex[8];  //性别
+    char name[10]; //姓名
+    char sex[4];  //性别
     int phone_number;  //电话
     char note;  //备注
     struct DulCom *next;
@@ -39,27 +39,34 @@ DulList creat_comm(){
 
 //初始化,头插
 DulList init_comm(DulList l,int n){
-    char nm, sx;
+    //char nm[10], sx[4];
     int i, num;
     DulList a;
     for (i=0; i< INIT; i++){
-        a = (DulList)malloc(sizeof(struct DulCom));
-        printf("输入第%d个初始联系人\n:", i+1);
+        a = (DulList)malloc(sizeof(DulCommu));
+        printf("\\==============================\\\n");
+        printf("输入第%d个初始联系人:\n", i+1);
         printf("==============================\n");
-        printf("第%d个联系人-姓名:\n", i + 1);
-        scanf("%s", nm);
-        a->name = nm;
-        printf("==============================");
-        printf("第%d个联系人-电话:\n", i + 1);
+        printf("第%d个联系人-姓名:\n", i+1);
+        scanf("%s", a->name);
+        //scanf("%c", nm);
+        //getchar();
+        //nm = getchar();
+        //a->name = nm[10];
+        printf("==============================\n");
+        printf("第%d个联系人-电话:\n", i+1);
         scanf("%d", &num);
+        getchar();
         a->phone_number = num;
-        printf("==============================");
-        printf("第%d个联系人-性别\n:", i + 1);
-        scanf("%s", sx);
-        a->sex = sx;
+        printf("==============================\n");
+        printf("第%d个联系人-性别:\n", i+1);
+        scanf("%s",a->sex);
+        //getchar();
+        //a->sex[4] = sx[4];
+        printf("\n");
 
         a->next = l->next;
-
+        l->next = a;
     }
     return l;
 }
@@ -67,17 +74,23 @@ void print_comm(DulList p){
     int i = 1;
     DulList s;
     s = p->next;
+    printf("==============================\n");
     while (s)
     {
-        printf("==============================\n");
-        printf("输入第%d个初始联系人:", i);
+        printf("第%d个初始联系人:\n", i);
+        /*printf("姓名:%c\n", while (s->name[x] != '\0') {
+            s->name[x];
+            x++;
+        });*/
+
         printf("姓名:%s\n", s->name);
         printf("性别:%s\n", s->sex);
         printf("电话:%d\n", s->phone_number);
+        printf("==============================\n");
         s = s->next;
         i++;
     }
-    
+    getchar();
 }
 
 
