@@ -1,7 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
-#define INIT 2
+#define INIT 3
+#define OK 1
 
 //创建节点
 typedef struct DulCom
@@ -107,6 +108,52 @@ DulList clear_comm(DulList l){
     return l;
 }
 
+//新增联系人
+int add_comm(DulList l, int i){
+    DulList p, t;
+    int j = 1;
+    p = l;
+    while (p && j<i){
+        p = p->next;
+        j++;
+    }
+    if(!p){
+        printf("%d position error.\n", i);
+    }
+    t = (DulList)malloc(sizeof(DulCommu));
+    printf("新增联系人信息\n");
+    printf("=========================\n");
+    printf("姓名：\n");
+    scanf("%s", t->name);
+    printf("电话：\n");
+    scanf("%s", t->phone_number);
+    printf("性别：\n");
+    scanf("%s", t->sex);
+
+    t->next = p->next;
+    p->next = t;
+    return OK;
+}
+
+//查找联系人-电话/姓名
+int find_comm(DulList l, char *data){
+    DulList check, p;
+    p = l;
+    char input[15];
+    printf("查询信息:\n");
+    scanf("%s", input);
+
+    while(p){
+        check = p->next;
+        if((check->name == &input) || (check->phone_number == &input) || (check->next == &input)){
+            check = check->next;
+            p = check;
+        }else{
+            
+        }
+        
+    }
+}
 
 int main(int argc, const char *argv[]) {
     DulList source1;

@@ -4,11 +4,11 @@
     "window.zoomLevel": 0,
     "editor.multiCursorModifier": "ctrlCmd",
     "files.autoSave": "afterDelay",
-    "editor.fontSize": 14,
+    "editor.fontSize": 14.3,
     "editor.fontFamily": "Source Code pro",
     "workbench.iconTheme": "vscode-icons",
     //terminal funcs
-    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontSize": 14.3,
     "terminal.integrated.fontFamily": "Source Code pro",
     "terminal.explorerKind": "external",
     //git bash
