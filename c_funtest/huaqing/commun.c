@@ -4,9 +4,7 @@
 #define INIT 3
 #define OK 1
 
-//创建节点
-typedef struct DulCom
-{
+typedef struct DulCom{  //创建节点
     char name[10]; //姓名
     char sex[4];  //性别
     char phone_number[12];  //电话
@@ -27,7 +25,7 @@ void window(){
     printf("\\*************************************************\\\n");
 }
 
-//创建空表
+//创建空表头
 DulList creat_comm(){
     DulList p;
     if(NULL== (p = (DulList)malloc(sizeof(struct DulCom)))){
@@ -70,7 +68,7 @@ DulList init_comm(DulList l,int n){
     return l;
 }
 
-//输出通讯录
+//打印通讯录
 void print_comm(DulList p){
     int i = 1;
     DulList s;
@@ -83,7 +81,6 @@ void print_comm(DulList p){
             s->name[x];
             x++;
         });*/
-
         printf("姓名:%s\n", s->name);
         printf("性别:%s\n", s->sex);
         printf("电话:%s\n", s->phone_number);
@@ -91,11 +88,9 @@ void print_comm(DulList p){
         s = s->next;
         i++;
     }
-    getchar();
 }
 
-//清空通讯录
-DulList clear_comm(DulList l){
+DulList clear_comm(DulList l){  //清空通讯录
     DulList cast,p;
     p = l->next;
     while (p)
@@ -108,7 +103,7 @@ DulList clear_comm(DulList l){
     return l;
 }
 
-//新增联系人
+//新增联系人,在i位置
 int add_comm(DulList l, int i){
     DulList p, t;
     int j = 1;
@@ -136,22 +131,27 @@ int add_comm(DulList l, int i){
 }
 
 //查找联系人-电话/姓名
-int find_comm(DulList l, char *data){
+void find_comm(DulList l, char *data){
     DulList check, p;
     p = l;
     char input[15];
     printf("查询信息:\n");
     scanf("%s", input);
-
-    while(p){
-        check = p->next;
-        if((check->name == &input) || (check->phone_number == &input) || (check->next == &input)){
+    check = p;
+    while (p){
+        if ((strcmp(check->name, input) == 0) || (strcmp(check->phone_number, input) == 0))
+        {
+            printf("查到信息:\n");
+            printf("姓名:%s\n", check->name);
+            printf("性别:%s\n", check->sex);
+            printf("电话:%s\n", check->phone_number);
+            break;
+        }
+        else{
+            printf("查不到信息:\n");
             check = check->next;
             p = check;
-        }else{
-            
         }
-        
     }
 }
 
