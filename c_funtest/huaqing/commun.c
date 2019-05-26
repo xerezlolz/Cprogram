@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#include<string.h>
 #define INIT 3
 #define OK 1
 
@@ -131,7 +132,7 @@ int add_comm(DulList l, int i){
 }
 
 //查找联系人-电话/姓名
-void find_comm(DulList l, char *data){
+void find_comm(DulList l){
     DulList check, p;
     p = l;
     char input[15];
@@ -148,7 +149,7 @@ void find_comm(DulList l, char *data){
             break;
         }
         else{
-            printf("查不到信息:\n");
+            printf("查不到信息:\n");  //存在问题,返回4次查不到信息
             check = check->next;
             p = check;
         }
@@ -160,6 +161,9 @@ int main(int argc, const char *argv[]) {
     source1 = creat_comm();
     source1 = init_comm(source1, INIT);
     print_comm(source1);
+    add_comm(source1, 1);
+    print_comm(source1);
+    find_comm(source1);
     getchar();
 
     /**
