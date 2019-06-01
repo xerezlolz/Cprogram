@@ -3,7 +3,10 @@
 
 typedef struct Linkque{
     int data;
-    struct linkque *node;
+    struct linkque *next;
 }Linkqueue, *Linkqueue_list;
 
-typedef
+typedef struct {
+    Linkqueue_list front, rear;
+}Linkqueue_top;
+
