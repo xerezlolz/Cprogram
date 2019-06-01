@@ -1,12 +1,12 @@
 #include<stdatomic.h>
 #include<stdlib.h>
 
-typedef struct Linkque{
+typedef struct linkque{
     int data;
     struct linkque *next;
-}Linkqueue, *Linkqueue_list;
+}linkqueue, *linkqueue_list;
 
 typedef struct {
-    Linkqueue_list front, rear;
-}Linkqueue_top;
+    linkqueue_list front, rear;
+}linkqueue_top;
 
