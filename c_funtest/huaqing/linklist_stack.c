@@ -15,6 +15,7 @@ typedef struct StackNode
     data_t data;
     struct StackNode *next;
 } LinkStack;
+
 LinkStack *CreateEmptyStack() //创建栈
 {
     LinkStack *s;
@@ -27,6 +28,7 @@ LinkStack *CreateEmptyStack() //创建栈
     s->next = NULL;
     return s;
 }
+
 int  ClearLinkStack(LinkStack *stack) //清空栈
 {
     if (!stack)

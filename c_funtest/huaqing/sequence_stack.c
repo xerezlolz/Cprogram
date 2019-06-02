@@ -39,6 +39,7 @@ int PopStack(SqStack *s, data_t *e) //弹栈
     s->top--;
     return OK;
 }
+
 SqStack *CreateEmptyStack() //创建栈
 {
     SqStack *stack = (SqStack *)malloc(sizeof(SqStack));
@@ -50,19 +51,23 @@ SqStack *CreateEmptyStack() //创建栈
     stack->top = -1;
     return stack;
 }
+
 int EmptyStack(SqStack *s) //判断栈是否是空栈
 {
     return -1 == s->top ? OK : ERROR;
 }
+
 int FullStack(SqStack *s) //判断栈是否是满栈
 {
     return MAXSIZE - 1 == s->top ? OK : ERROR;
 }
+
 int ClearStack(SqStack *s) //清空栈内元素
 {
     s->top = -1;
     return OK;
 }
+
 int main()
 {
     /*
