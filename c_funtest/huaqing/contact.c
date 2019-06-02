@@ -147,8 +147,7 @@ void find_comm(DulList l){
             printf("性别:%s\n", check->sex);
             printf("电话:%s\n", check->phone_number);
             break;
-        }
-        else{
+        }else{
             printf("查不到信息:\n");  //存在问题,返回4次查不到信息
             check = check->next;
             p = check;
