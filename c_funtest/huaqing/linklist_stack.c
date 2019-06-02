@@ -3,6 +3,12 @@
 
 #define OK 1
 #define ERROR 0
+
+/**
+ * 栈-链式结构
+ * 
+*/
+
 typedef int data_t;
 typedef struct StackNode
 {

@@ -4,6 +4,11 @@
 #define OK 1
 #define ERROR 0
 
+/**
+ * 栈-顺序结构
+ * 
+ */
+
 typedef int data_t;
 typedef struct
 {
