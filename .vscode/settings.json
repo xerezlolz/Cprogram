@@ -47,6 +47,8 @@
         "utility": "c",
         "stdio.h": "c",
         "math.h": "c",
-        "assert.h": "c"
+        "assert.h": "c",
+        "time.h": "c",
+        "string.h": "c"
     },
 }
