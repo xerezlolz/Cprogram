@@ -51,6 +51,7 @@ int DestroyLinkStack(LinkStack *stack) //销毁栈
     stack = NULL;
     return OK;
 }
+
 int EmptyLinkStack(LinkStack *stack) //判断栈是否为空
 {
     if (stack == NULL)
@@ -63,6 +64,7 @@ int EmptyLinkStack(LinkStack *stack) //判断栈是否为空
         return NULL == stack->next ? OK : ERROR;
     }
 }
+
 int PushStack(LinkStack *s, data_t e) //压栈
 {
     if (s == NULL)
@@ -76,6 +78,7 @@ int PushStack(LinkStack *s, data_t e) //压栈
     s->next = p;
     return OK;
 }
+
 int PopStack(LinkStack *s, data_t *e) //弹栈
 {
     LinkStack *p;
@@ -95,7 +98,6 @@ int PopStack(LinkStack *s, data_t *e) //弹栈
     free(p);
     return OK;
 }
-
 
 int main()
 {
