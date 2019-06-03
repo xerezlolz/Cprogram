@@ -42,6 +42,7 @@ int  ClearLinkStack(LinkStack *stack) //清空栈
     }
     return OK;
 }
+
 int DestroyLinkStack(LinkStack *stack) //销毁栈
 {
     if (stack)
