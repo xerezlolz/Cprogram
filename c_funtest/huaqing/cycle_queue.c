@@ -29,6 +29,7 @@ SqQueue *CreateEmptyQueue() //创建队列
     sq->rear = 0;
     return sq;
 }
+
 int DestroyQueue(SqQueue *Q) //销毁队列
 {
     if (Q == NULL)
@@ -40,6 +41,7 @@ int DestroyQueue(SqQueue *Q) //销毁队列
     Q = NULL;
     return OK;
 }
+
 int QueueLength(SqQueue *Q) //求当前队列长度
 {
     return (Q->rear - Q->front + MAXSIZE) % MAXSIZE;
@@ -56,6 +58,7 @@ int EmptyQueue(SqQueue *Q) //判断队是否为空
     else
         return ERROR;
 }
+
 int FullQueue(SqQueue *Q) //判断队是否已满
 {
     if (Q == NULL)
@@ -68,6 +71,7 @@ int FullQueue(SqQueue *Q) //判断队是否已满
     else
         return ERROR;
 }
+
 int EnQueue(SqQueue *Q, data_t e) //元素e入队
 {
     if (FullQueue(Q) == OK)
@@ -79,6 +83,7 @@ int EnQueue(SqQueue *Q, data_t e) //元素e入队
     Q->rear = (Q->rear + 1) % MAXSIZE;
     return OK;
 }
+
 int DeQueue(SqQueue *Q, data_t *e) //元素出队，出队元素存储在e中
 {
     if (EmptyQueue(Q) == OK)

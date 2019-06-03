@@ -6,6 +6,7 @@ typedef struct linkque{
     struct linkque *next;
 }linkqueue, *linkqueue_list;
 
+
 typedef struct {
     linkqueue_list front, rear;
 }linkqueue_top;

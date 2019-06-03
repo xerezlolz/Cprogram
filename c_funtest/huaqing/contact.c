@@ -5,7 +5,8 @@
 #define INIT 3
 #define OK 1
 
-typedef struct DulCom{  //创建节点
+typedef struct DulCom
+{  //创建节点
     char name[10]; //姓名
     char sex[4];  //性别
     char phone_number[12];  //电话
@@ -14,7 +15,8 @@ typedef struct DulCom{  //创建节点
 }DulCommu, *DulList;
 
 //创建交互界面
-void window(){
+void window()
+{
     printf("\\*************************************************\\\n");
     printf("1.显示全部联系人信息\n");
     printf("2.清空联系人信息\n");
@@ -27,7 +29,8 @@ void window(){
 }
 
 //创建空表头
-DulList creat_comm(){
+DulList creat_comm()
+{
     DulList p;
     if(NULL== (p = (DulList)malloc(sizeof(struct DulCom)))){
         printf("creat new infomation form error\n");
@@ -38,7 +41,8 @@ DulList creat_comm(){
 }
 
 //初始化,尾插
-DulList init_comm(DulList l,int n){
+DulList init_comm(DulList l,int n)
+{
     //char nm[10], sx[4];
     int i;
     DulList a, last;
@@ -70,7 +74,8 @@ DulList init_comm(DulList l,int n){
 }
 
 //打印通讯录
-void print_comm(DulList p){
+void print_comm(DulList p)
+{
     int i = 1;
     DulList s;
     s = p->next;
@@ -91,7 +96,9 @@ void print_comm(DulList p){
     }
 }
 
-DulList clear_comm(DulList l){  //清空通讯录
+//清空通讯录
+DulList clear_comm(DulList l)
+{  
     DulList cast,p;
     p = l->next;
     while (p)
@@ -105,15 +112,18 @@ DulList clear_comm(DulList l){  //清空通讯录
 }
 
 //新增联系人,在i位置
-int add_comm(DulList l, int i){
+int add_comm(DulList l, int i)
+{
     DulList p, t;
     int j = 1;
     p = l;
-    while (p && j<i){
+    while (p && j<i)
+    {
         p = p->next;
         j++;
     }
-    if(!p){
+    if(!p)
+    {
         printf("%d position error.\n", i);
     }
     t = (DulList)malloc(sizeof(DulCommu));
@@ -132,7 +142,8 @@ int add_comm(DulList l, int i){
 }
 
 //查找联系人-电话/姓名
-void find_comm(DulList l){
+void find_comm(DulList l)
+{
     DulList check, p;
     p = l;
     char input[15];
@@ -155,7 +166,8 @@ void find_comm(DulList l){
     }
 }
 
-int main(int argc, const char *argv[]) {
+int main(int argc, const char *argv[])
+{
     DulList source1;
     source1 = creat_comm();
     source1 = init_comm(source1, INIT);

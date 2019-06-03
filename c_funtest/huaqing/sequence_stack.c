@@ -68,6 +68,7 @@ int ClearStack(SqStack *s) //清空栈内元素
     return OK;
 }
 
+
 int main()
 {
     /*

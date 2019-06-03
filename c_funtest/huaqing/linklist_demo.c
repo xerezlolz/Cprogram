@@ -196,6 +196,7 @@ LinkList Adjmax(LinkList h) //练习2：寻找最大元素对
     } //取和为最大的第一结点指针
     return p1;
 }
+
 int main()
 {
 

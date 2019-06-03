@@ -95,6 +95,7 @@ int PopStack(LinkStack *s, data_t *e) //弹栈
     return OK;
 }
 
+
 int main()
 {
     /*
