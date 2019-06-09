@@ -46,6 +46,7 @@ int QueueLength(SqQueue *Q) //求当前队列长度
 {
     return (Q->rear - Q->front + MAXSIZE) % MAXSIZE;
 }
+
 int EmptyQueue(SqQueue *Q) //判断队是否为空
 {
     if (Q == NULL)

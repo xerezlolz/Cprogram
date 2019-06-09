@@ -71,7 +71,7 @@ int ClearStack(SqStack *s) //清空栈内元素
 
 int main()
 {
-    /*
+    
     SqStack *stack = CreateEmptyStack();
     data_t data;
     PushStack(stack,20);
@@ -86,6 +86,6 @@ int main()
         printf("Stack is Empty!\n");
     if(FullStack(stack)==OK)
         printf("Stack is Full!\n");
-	*/
+	
     return 0;
 }
