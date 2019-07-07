@@ -47,7 +47,8 @@ DulList init_comm(DulList l,int n)
     int i;
     DulList a, last;
     last = l;
-    for (i=0; i< INIT; i++){
+    for (i=0; i< n; i++)
+    {
         a = (DulList)malloc(sizeof(DulCommu));
         printf("\\==============================\\\n");
         printf("输入第%d个初始联系人:\n", i+1);
@@ -174,7 +175,7 @@ int main(int argc, const char *argv[])
     print_comm(source1);
     add_comm(source1, 1);
     print_comm(source1);
-    find_comm(source1);
+    //find_comm(source1);
     getchar();
 
     /**

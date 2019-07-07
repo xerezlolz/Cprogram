@@ -39,7 +39,8 @@ int ListInsert(LinkList L, int i, data_t e) //插入新节点，使其成为第i
     LinkList p, s;
     p = L;
     j = 1;
-    while (p && j < i){  //寻找i的位置
+    while (p && j < i)
+    {  //寻找i的位置
         p = p->next;
         j++;
     }
